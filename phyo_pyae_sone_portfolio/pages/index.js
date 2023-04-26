@@ -2,12 +2,26 @@ import { Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import WhatIDo from '@/components/WhatIDo';
+import Skills from '@/components/Skills';
+import Work from '@/components/Work';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
+import Sidebar from '@/components/Sidebar';
 import Head from 'next/head'
+import { useState } from 'react';
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const[isOpen, setIsOpen] = useState(false)
+ 
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
     <div>
     <Head>
@@ -17,13 +31,23 @@ export default function Home() {
     </Head>
 
     <header>
-      <Navbar /> 
+      <Navbar toggleSidebar={toggleSidebar} /> 
     </header>
 
     <main>
+      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       <Hero />
       <About />
+      <WhatIDo />
+      <Skills />
+      <Work />
+      <Contact />
+      
     </main>
+
+    <footer>
+    <Footer />
+    </footer>
   </div>
   );
 }

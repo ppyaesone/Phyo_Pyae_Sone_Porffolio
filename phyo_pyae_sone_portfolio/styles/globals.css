@@ -7,5 +7,9 @@
     @apply bg-[#376dbe] text-white py-2 px-4 rounded inline-block mt-10
     font-medium border border-[#376dbe] hover:bg-transparent hover:text-[#376dbe] transition duration-200
   }
+
+  .inputStyle{
+    @apply outline-[#376dbe] border-gray-400 border rounded-[5px] px-4 py-2 w-[100%]
+  }
 }
 

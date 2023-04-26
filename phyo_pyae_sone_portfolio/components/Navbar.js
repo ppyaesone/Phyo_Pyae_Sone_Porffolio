@@ -4,7 +4,7 @@ import Link from "next/link";
 import { HiDownload } from 'react-icons/hi'
 import { FiMenu } from 'react-icons/fi'
 
-const Navbar = () => {
+const Navbar = ({toggleSidebar}) => {
   return (
     <div className="bg-white fixed top-0 w-[100%] z-10">
       <div className="container mx-auto flex justify-between items-center py-4 px-4">
@@ -37,7 +37,7 @@ const Navbar = () => {
             <HiDownload />
         </a>
 
-        <div className="md:hidden text-[24px]">
+        <div className="md:hidden text-[24px]" onClick={toggleSidebar}>
           <FiMenu />
         </div>
       </div>
